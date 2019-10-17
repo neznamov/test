@@ -1,0 +1,63 @@
+.static-capture{
+	margin-top: 94px;
+	margin-bottom: 16px;
+	text-align: center;
+		color: #ededed;
+	font-size: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3.75px;
+}
+
+.static-title{
+	text-align: center;
+	color: #ededed;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 2.25px;
+	margin-bottom: 80px;
+}
+
+.static--inner{
+	max-width: 940px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+	margin-bottom: 74px;
+	justify-content: space-between;
+}
+
+.static-item__count{
+	letter-spacing: 9px;
+	color: #ededed;
+font-size: 72px;
+font-weight: 600;
+margin-bottom: 22px;
+text-align: center;
+}
+
+.static-item__name{
+	color: #ededed;
+font-size: 24px;
+font-weight: 400;
+text-transform: uppercase;
+text-align: center;
+}
+
+.static-item{
+	max-width: 240px;
+}
+
+.static{
+	display: flex;
+	flex-direction: column;
+	background: #403c40 url("../img/big-wheels.jpg")no-repeat center center;
+	background-size: 100%;
+}
+
+.static-item--last-item{
+	max-width: 152px;
+}
+
