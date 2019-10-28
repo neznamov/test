@@ -63,3 +63,13 @@ letter-spacing: 2.25px;
 -webkit-border-radius: 200px 200px 200px 200px;
 border: 0px solid #000000;
 }
+
+@media(max-width: 920px){
+	.team-items{
+		justify-content: center;
+	}
+
+	.team-items__item{
+		margin-bottom: 20px;
+	}
+}

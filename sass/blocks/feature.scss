@@ -80,3 +80,9 @@
 .feature-items{
 	margin-bottom: 56px;
 }
+
+@media(max-width: 920px){
+    .feature-items{
+        justify-content: center;
+    }
+}

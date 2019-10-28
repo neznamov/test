@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300i,400,600,700&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 		<title>Wheel</title>
 	</head>
@@ -15,11 +16,21 @@
 					wheels
 					</a>
 					<div class="header-menu">
+						<nav class="header-nav">
+							<ul class="header-nav__list">
+								<li><a href="">About us</a></li>
+								<li><a href="">Products</a></li>
+								<li><a href="">Services</a></li>
+								<li><a href="">Our Team</a></li>
+								<li><a href="">Blog</a></li>
+								<li><a href="">Contact</a></li>
+							</ul>
+						</nav>
 						<p class="header-menu__text">menu</p>
 						<div class="header-menu__burger">
-							<span></span>
-							<span></span>
-							<span></span>
+							<span class="header-menu__burger-item"></span>
+							<span class="header-menu__burger-item"></span>
+							<span class="header-menu__burger-item"></span>
 						</div>
 					</div>
 				</div>
@@ -37,15 +48,20 @@
 			<section class="about">
 				<nav class="navigation">
 					<div class="navigation--wrapper">
-						<a class="header-logo header-logo--navigation" href="">wheels</a>
+						<a class="header-logo header-logo--navigation navigation-logo " href="">wheels</a>
 						<ul class="navigation-list">
-							<li><a href="">About us</a></li>
-							<li><a href="">Products</a></li>
-							<li><a href="">Services</a></li>
-							<li><a href="">Our Team</a></li>
-							<li><a href="">Blog</a></li>
-							<li><a href="">Contact</a></li>
+							<li><a class="navigation-list__item" href="">About us</a></li>
+							<li><a class="navigation-list__item" href="">Products</a></li>
+							<li><a class="navigation-list__item"  href="">Services</a></li>
+							<li><a class="navigation-list__item" href="">Our Team</a></li>
+							<li><a class="navigation-list__item" href="">Blog</a></li>
+							<li><a class="navigation-list__item" href="">Contact</a></li>
 						</ul>
+						<div class="navigation-menu__burger">
+							<span class="navigation-menu__burger-item"></span>
+							<span class="navigation-menu__burger-item"></span>
+							<span class="navigation-menu__burger-item"></span>
+						</div>
 					</div>	
 				</nav>
 				<div class="about--wrapper">
@@ -248,5 +264,79 @@
 	</body>
 	<script>
 		
+	$(".footer-links1").click(function(){
+		$(this).toggleClass("footer-links1--active ul");
+	})
+
+	$(".footer-links2").click(function(){
+		$(this).toggleClass("footer-links2--active ul");
+	})
+
+	$(".footer-social").click(function(){
+		$(this).toggleClass("footer-social--active ul");
+	})
+
+
+	$(".navigation-menu__burger").click(function(){
+		$(".navigation-menu__burger-item").toggleClass("navigation-menu__burger-item--active");
+		$(".navigation-menu__burger").toggleClass("navigation-menu__burger--active");
+		$(".navigation--wrapper").toggleClass("navigation--wrapper--active");
+		$(".navigation-list").toggleClass("navigation-list--active");
+		$(".navigation-logo").toggleClass("navigation-logo--active");
+	})
+	
+	/*Header navigation burger*/
+	$(".header-menu__text, .header-menu__burger").click(function(){
+			$(".header-nav").toggleClass("header-nav--active");
+			$(".header-menu__text").toggleClass("header-menu__text--disable");
+			$(".header-menu__burger-item").toggleClass("header-menu__burger-item--active");
+			$(".header-menu__burger").toggleClass("header-menu__burger--active");
+			$(".header-top").toggleClass("header-top--active");
+			$(".header-menu__burger").toggleClass("header-menu__burger--active-mob");
+			$(".header-menu").toggleClass("header-menu--active");
+	});
+
+	/*Navigation fixed*/
+	$(window).scroll(function(){
+		let aboutHeight = $(".about").offset().top;
+		let sticky = $('.navigation'),
+		scroll = $(window).scrollTop(),
+		capture = $(".about-capture");
+		if (scroll >= aboutHeight)sticky.addClass('navigation--active', 1000, 'easeOutBounce'),capture.addClass("about-capture--active");
+		else sticky.removeClass('navigation--active'),
+			capture.removeClass("about-capture--active");
+	});
+
+	/* Parallax*/
+	$(window).scroll("load",function(){
+		let st = $(this).scrollTop();
+		let parallax = $(".about").offset().top;
+		if($(window).width()>=1200){
+			$(".header").css({
+				"background-position-y": "+" + st/3 + "px"
+			});
+
+			$(".header-top").css({
+				"transform" : "translate(0%, " + st /2.0 +"%"
+			});
+
+			$(".header-bottom").css({
+				"transform" : "translate(0%, " + st /15.7 +"%"
+			});
+		}if($(window).scrollTop()>= parallax){
+			$(".header-top").css({
+				"transform" : "translate(0%, " + st * 0 +"px"
+			});
+			$(".header").css({
+				"background-position-y": "+" + st * 0 + "px"
+			});
+
+			$(".header-bottom").css({
+				"transform" : "translate(0%, " + st * 0 +"%"
+			});
+		}
+	});
+
+	
 	</script>
 </html>

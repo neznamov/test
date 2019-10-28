@@ -53,11 +53,19 @@ text-align: center;
 .static{
 	display: flex;
 	flex-direction: column;
-	background: #403c40 url("../img/big-wheels.jpg")no-repeat center center;
-	background-size: 100%;
+	background: #403c40 url("../img/big-wheels.jpg")no-repeat center center fixed;
+	background-size: 100% 100%;
 }
 
 .static-item--last-item{
 	max-width: 152px;
 }
 
+@media(max-width: 920px){
+	.static--inner{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+
+}
