@@ -12,18 +12,18 @@
 		<header class="header">
 			<div class="header__wrapper">
 				<div class="header-top">
-					<a class="header-logo" href="#">
+					<a id="logo" class="header-logo" href="">
 					wheels
 					</a>
 					<div class="header-menu">
 						<nav class="header-nav">
 							<ul class="header-nav__list">
-								<li><a href="">About us</a></li>
-								<li><a href="">Products</a></li>
+								<li><a href="#about">About us</a></li>
+								<li><a href="#product">Products</a></li>
 								<li><a href="">Services</a></li>
-								<li><a href="">Our Team</a></li>
+								<li><a href="#team">Our Team</a></li>
 								<li><a href="">Blog</a></li>
-								<li><a href="">Contact</a></li>
+								<li><a href="#social">Contact</a></li>
 							</ul>
 						</nav>
 						<p class="header-menu__text">menu</p>
@@ -45,17 +45,17 @@
 			</div>
 		</header>
 		<main class="main">
-			<section class="about">
+			<section id="about" class="about">
 				<nav class="navigation">
 					<div class="navigation--wrapper">
-						<a class="header-logo header-logo--navigation navigation-logo " href="">wheels</a>
+						<a class="header-logo header-logo--navigation navigation-logo " href="#logo">wheels</a>
 						<ul class="navigation-list">
-							<li><a class="navigation-list__item" href="">About us</a></li>
-							<li><a class="navigation-list__item" href="">Products</a></li>
+							<li><a class="navigation-list__item" href="#about">About us</a></li>
+							<li><a class="navigation-list__item" href="#product">Products</a></li>
 							<li><a class="navigation-list__item"  href="">Services</a></li>
-							<li><a class="navigation-list__item" href="">Our Team</a></li>
+							<li><a class="navigation-list__item" href="#team">Our Team</a></li>
 							<li><a class="navigation-list__item" href="">Blog</a></li>
-							<li><a class="navigation-list__item" href="">Contact</a></li>
+							<li><a class="navigation-list__item" href="#social">Contact</a></li>
 						</ul>
 						<div class="navigation-menu__burger">
 							<span class="navigation-menu__burger-item"></span>
@@ -93,7 +93,7 @@
 					</div>	
 				</div>
 			</section>
-			<section class="feature">
+			<section id="product" class="feature">
 				<h3 class="feature-capture">
 					featured products
 				</h3>
@@ -151,7 +151,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="team">
+			<section id="team" class="team">
 				<h3 class="team-capture">meet the team</h3>
 				<p class="team-title">People who make the magic happen</p>
 				<div class="team-items">
@@ -178,7 +178,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="social">
+			<section id="social" class="social">
 				<h3 class="social-capture">#social showcase</h3>
 				<p class="social-title">Show your customers why your Instagram account is the one they should follow</p>
 				<div class="social-img">
@@ -261,82 +261,14 @@
 				</div>	
 			</div>
 		</footer>
+		<section class="map">
+			<div class="map__wrapper">
+				<div class="map-closer">
+					<span class="map-closer__item"></span>
+					<span class="map-closer__item"></span>
+				</div>	
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75993.25869265817!2d-2.293502315095846!3d53.47222497481179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a4d4c5226f5db%3A0xd9be143804fe6baa!2z0JzQsNC90YfQtdGB0YLQtdGALCDQktC10LvQuNC60L7QsdGA0LjRgtCw0L3QuNGP!5e0!3m2!1sru!2sru!4v1572496868269!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+		</section>
 	</body>
-	<script>
-		
-	$(".footer-links1").click(function(){
-		$(this).toggleClass("footer-links1--active ul");
-	})
-
-	$(".footer-links2").click(function(){
-		$(this).toggleClass("footer-links2--active ul");
-	})
-
-	$(".footer-social").click(function(){
-		$(this).toggleClass("footer-social--active ul");
-	})
-
-
-	$(".navigation-menu__burger").click(function(){
-		$(".navigation-menu__burger-item").toggleClass("navigation-menu__burger-item--active");
-		$(".navigation-menu__burger").toggleClass("navigation-menu__burger--active");
-		$(".navigation--wrapper").toggleClass("navigation--wrapper--active");
-		$(".navigation-list").toggleClass("navigation-list--active");
-		$(".navigation-logo").toggleClass("navigation-logo--active");
-	})
-	
-	/*Header navigation burger*/
-	$(".header-menu__text, .header-menu__burger").click(function(){
-			$(".header-nav").toggleClass("header-nav--active");
-			$(".header-menu__text").toggleClass("header-menu__text--disable");
-			$(".header-menu__burger-item").toggleClass("header-menu__burger-item--active");
-			$(".header-menu__burger").toggleClass("header-menu__burger--active");
-			$(".header-top").toggleClass("header-top--active");
-			$(".header-menu__burger").toggleClass("header-menu__burger--active-mob");
-			$(".header-menu").toggleClass("header-menu--active");
-	});
-
-	/*Navigation fixed*/
-	$(window).scroll(function(){
-		let aboutHeight = $(".about").offset().top;
-		let sticky = $('.navigation'),
-		scroll = $(window).scrollTop(),
-		capture = $(".about-capture");
-		if (scroll >= aboutHeight)sticky.addClass('navigation--active', 1000, 'easeOutBounce'),capture.addClass("about-capture--active");
-		else sticky.removeClass('navigation--active'),
-			capture.removeClass("about-capture--active");
-	});
-
-	/* Parallax*/
-	$(window).scroll("load",function(){
-		let st = $(this).scrollTop();
-		let parallax = $(".about").offset().top;
-		if($(window).width()>=1200){
-			$(".header").css({
-				"background-position-y": "+" + st/3 + "px"
-			});
-
-			$(".header-top").css({
-				"transform" : "translate(0%, " + st /2.0 +"%"
-			});
-
-			$(".header-bottom").css({
-				"transform" : "translate(0%, " + st /15.7 +"%"
-			});
-		}if($(window).scrollTop()>= parallax){
-			$(".header-top").css({
-				"transform" : "translate(0%, " + st * 0 +"px"
-			});
-			$(".header").css({
-				"background-position-y": "+" + st * 0 + "px"
-			});
-
-			$(".header-bottom").css({
-				"transform" : "translate(0%, " + st * 0 +"%"
-			});
-		}
-	});
-
-	
-	</script>
+	<script src="js/main.js"></script>
 </html>

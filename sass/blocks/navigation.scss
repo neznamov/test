@@ -1,163 +1,212 @@
 .navigation{
-	box-shadow: 1px 1px 27px rgba(0, 0, 0, 0.16);
-	transition: all 0.2s ease-out;
+    transition: all .2s ease-out;
+
+    box-shadow: 1px 1px 27px rgba(0, 0, 0, .16);
 }
 
 .navigation--wrapper{
-display: flex;
+    display: flex;
+
     max-width: 1577px;
-    padding-left: 20px;
-    padding-right: 20px;
+    min-height: 82px;
     margin: 0 auto;
-align-items: center;
-min-height: 82px;
-	justify-content: space-between;
-	transition: all 0.9s ease-out;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    transition: all .9s ease-out;
+
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navigation--active{
-	position: fixed;
+    position: fixed;
+    top: 0;
+
     width: 100%;
-    top: 0px;
-    background-color: #ffffff;
+
+    background-color: #fff;
 }
 
 .navigation-list{
-	transition: all 0.2s ease-out;
-	display: flex;
-	max-width: 1035px;
-	width: 100%;
-	justify-content: space-between;
-	a{
-		text-decoration: none;
-		color: #3b3b3b;
-font-size: 18px;
-transition: all 0.9s ease-out;
-font-weight: bold;
-text-transform: uppercase;
+    display: flex;
 
+    width: 100%;
+    max-width: 1035px;
 
-	}
+    transition: all .2s ease-out;
+
+    justify-content: space-between;
+    a{
+        font-size: 18px;
+        font-weight: bold;
+
+        position: relative;
+
+        transition: all .9s ease-out;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        color: #3b3b3b;
+
+        &:after{
+            position: absolute;
+
+            display: block;
+
+            width: 0;
+            height: 2px;
+
+            content: '';
+            -webkit-transition: width .1s ease-in;
+                    transition: width .1s ease-in;
+
+            background-color: #000;
+        }
+        &:hover:after{
+            width: 100%;
+        }
+    }
+    .active{
+        	border-bottom: 2px solid #000000 ;
+        }
 }
 
+
+
 .navigation--active{
-	position: fixed;
+    position: fixed;
+    top: 0;
+
     width: 100%;
-    top: 0px;
-    transition: all 0.1s ease-out;
-    background-color: #ffffff;
+
+    transition: all .1s ease-out;
+
+    background-color: #fff;
 }
 
 .navigation-list__item--active{
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .navigation-menu__burger{
-	display: none;
+    display: none;
 }
 
 @media(max-width: 920px){
+    .navigation-list{
+        display: none;
 
-	.navigation-list{
-		display: none;
+        li{
+            width: 100%;
+        }
+    }
 
-   	 li{
-    	width: 100%;
-    	}
-	}
+    .navigation-menu__burger{
+        display: block;
+    }
 
-	.navigation-menu__burger{
-		display: block;
-	}
+    .header-logo--navigation{
+        padding-left: 20px;
+    }
 
-	.header-logo--navigation{
-		padding-left: 20px;
-	}
+    .navigation-menu__burger-item{
+        background-color: #000 !important;
+    }
 
-	.navigation-menu__burger-item{
-		background-color: #000000 !important;
-	}
+    .navigation-menu__burger{
+        padding-right: 20px;
 
-	.navigation-menu__burger{
-		padding-right: 20px;
-		cursor: pointer;
-	}
+        cursor: pointer;
+    }
 
-	.navigation--wrapper{
-		flex-direction: row;
-		padding: 0px;
-		position: relative;
-		align-items: center;
-    	justify-content: space-between;
-	}
+    .navigation--wrapper{
+        position: relative;
 
-	.navigation-list a{
-		padding: 15px 0 15px 0;
-		border-bottom: 1px solid;
-		display: flex;
-		justify-content: center;
-	}
+        flex-direction: row;
 
-	.navigation-menu__burger-item{
-		display: block;
-   	width: 20px;
-    height: 4px;
-    background-color: #ededed;
-    border-radius: 2px;
-	}
+        padding: 0;
 
-	.navigation-menu__burger span:nth-child(2){
-		margin-bottom: 2px;
-    margin-top: 2px;
-	}
+        align-items: center;
+        justify-content: space-between;
+    }
 
-	.navigation-logo--active{
-		padding-top: 20px;
-	}
+    .navigation-list a{
+        display: flex;
 
-	.navigation-list--acitve{
-		display: flex;
-	}
+        padding: 15px 0 15px 0;
 
-	.navigation--wrapper--active{
-		flex-direction: column;
-		align-items: baseline;
-		position: relative;
-	}
+        border-bottom: 1px solid;
 
-	.navigation-menu__burger--active{
-		position: relative;
-		top: 5px;
-	}
+        justify-content: center;
+    }
+
+    .navigation-menu__burger-item{
+        display: block;
+
+        width: 20px;
+        height: 4px;
+
+        border-radius: 2px;
+        background-color: #ededed;
+    }
+
+    .navigation-menu__burger span:nth-child(2){
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .navigation-logo--active{
+        padding-top: 20px;
+    }
+
+    .navigation-list--acitve{
+        display: flex;
+    }
+
+    .navigation--wrapper--active{
+        position: relative;
+
+        flex-direction: column;
+
+        align-items: baseline;
+    }
+
+    .navigation-menu__burger--active{
+        position: relative;
+        top: 5px;
+    }
 
 
-	.navigation-menu__burger-item--active:nth-child(1){
-		    transform: rotate(45deg);
-    background-color: #dd0909;
-    transition: all 0.2s ease-out;
-	}
+    .navigation-menu__burger-item--active:nth-child(1){
+        transition: all .2s ease-out;
+        transform: rotate(45deg);
 
-	.navigation-menu__burger-item--active:nth-child(2){
-		    transform: rotate(-45deg);
-    position: relative;
-    top: -6px;
-    background-color: #dd0909;
-    transition: all 0.2s ease-out;
-	}
+        background-color: #dd0909;
+    }
 
-	.navigation-menu__burger-item--active:nth-child(3){
-		opacity: 0;
-	}
+    .navigation-menu__burger-item--active:nth-child(2){
+        position: relative;
+        top: -6px;
 
-	.navigation-list--active{
-		display: flex;
-    flex-direction: column;
-	}
+        transition: all .2s ease-out;
+        transform: rotate(-45deg);
 
-		.navigation-menu__burger--active{
-		    position: absolute;
-    		right: 0px;
-    		top: 40px;
-	}
+        background-color: #dd0909;
+    }
 
+    .navigation-menu__burger-item--active:nth-child(3){
+        opacity: 0;
+    }
+
+    .navigation-list--active{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-menu__burger--active{
+        position: absolute;
+        top: 40px;
+        right: 0;
+    }
 }

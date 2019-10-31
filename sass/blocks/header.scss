@@ -135,6 +135,24 @@ font-style: italic;
     width: 100%;
     justify-content: space-between;
         transition: .2s ease;
+        a{
+			position: relative;
+			&:after{
+				display: block;
+    			position: absolute;
+			    width: 0;
+			    height: 2px;
+			    background-color: #ffffff;
+			    content: "";
+			    -webkit-transition: width 0.1s ease-in;
+			    transition: width 0.1s ease-in;
+				}
+
+				&:hover:after{
+				width: 100%;
+				}
+			}
+
 }
 
 .header-menu__burger-item--active:nth-child(2){

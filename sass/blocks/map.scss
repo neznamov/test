@@ -1,0 +1,51 @@
+.map__wrapper{
+	max-width: 600px;
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	box-shadow: 0 10px 30px 10px rgba(0,0,0,.5);
+	position: relative;
+
+}
+
+.map{
+	position: fixed;
+    top: 20%;
+    right: 0;
+    left: 0;
+	display: none;
+}
+
+.map--active{
+	display: block;
+}
+
+.map-closer__item:nth-child(1){
+	transform: rotate(45deg);
+    background-color: #dd0909;
+    transition: all 0.2s ease-out;
+}
+
+.map-closer__item:nth-child(2){
+	transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+    background-color: #dd0909;
+    transition: all 0.2s ease-out;
+        margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.map-closer__item{
+	display: block;
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.map-closer{
+	position: absolute;
+	right: 15px;
+    top: 15px;
+	cursor: pointer;
+}
